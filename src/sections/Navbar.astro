@@ -1,0 +1,30 @@
+<nav class="flex items-center justify-between flex-wrap p-6 bg-gray-100">
+  <a href="/" class="">
+    <img src="/logocorporacionandi.svg" alt="Logo" class="w-72 h-auto" />
+  </a>
+  <ul class="flex items-center gap-x-4 text-gray-500 text-sm">
+    <li class="">
+      <a href="/" class="nav">Inicio</a>
+    </li>
+    <li class="">
+      <a href="/nosotros" class="nav">Sobre</a>
+    </li>
+    <li class="">
+      <a href="/contact" class="nav">Contacto</a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+    nav {
+      animation: nav-shadown 1s linear both;
+      animation-timeline: scroll();
+      animation-range: 0 100px;
+    }
+  
+    @keyframes nav-shadown {
+      to {
+        @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/50 ring-white/10;
+      }
+    }
+  </style>
