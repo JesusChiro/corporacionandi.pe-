@@ -1,0 +1,40 @@
+---
+import { CUSTOMERS } from "@/consts/Customers";
+import { ALIANCES } from "@/consts/Customers";
+---
+
+<section class="text-center">
+  <aside class="bg-fondoservices pb-10">
+    <h2 class="text-3xl font-black py-5">¿Quiénes confían en nosotros?</h2>
+    <div class="flex flex-row gap-3 items-center justify-center">
+      {
+        CUSTOMERS.map(({ id, name }) => (
+          <a href={`https://www.${id}.com.pe`} target="_blank" rel="noreferrer">
+            <img
+              src={`/Clientes/${id}.png`}
+              alt={`Cliente ${name}`}
+              class="mx-auto max-w-[120px] max-h-[100px]"
+            />
+          </a>
+        ))
+      }
+    </div>
+  </aside>
+  <aside class="mt-10 pb-10">
+    <h2 class="text-3xl font-black my-2">Alianzas estratégicas</h2>
+    <h4>Trabajamos de la mano con las principales empresas del rubro.</h4>
+    <div class="flex flex-row gap-3 items-center justify-center">
+      {
+        ALIANCES.map(({ id, name }) => (
+          <a href={`https://www.${id}.com.pe`} target="_blank" rel="noreferrer">
+            <img
+              src={`/Clientes/${id}.png`}
+              alt={`Cliente ${name}`}
+              class="mx-auto max-w-[120px] max-h-[90px]"
+            />
+          </a>
+        ))
+      }
+    </div>
+  </aside>
+</section>
