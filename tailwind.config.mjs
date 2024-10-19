@@ -12,6 +12,7 @@ export default {
 				'logodark': '#0A195F',
 				'fondolight': '#FFFFFF',
 				'fondodark': '#252626',
+				'fondoservices': '#EDEDED'
 
 			}
 		},

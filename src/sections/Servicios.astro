@@ -1,0 +1,77 @@
+---
+import Magnify from "@/components/Magnify.astro";
+import { GRUAS } from "@/consts/servicios";
+---
+
+<section class="bg-fondoservices">
+  <div class="w-3/4 p-20 mx-auto">
+    <h1 class="mx-10 font-bold text-3xl py-6">Nuestros servicios</h1>
+    <div class="slider">
+      <div class="slidertrack flex flex-row gap-3 items-center justify-center">
+        {
+          GRUAS.map((item) => (
+            <>
+              <div class="slide relative flex flex-col items-center justify-center w-[212px] pb-2 bg-logoBlue overflow-x-hidden cursor-pointer">
+                <img
+                  src={item.img1}
+                  alt=""
+                  class="border-4 border-logoBlue h-[150px] "
+                />
+                <div class="absolute inset-0 bg-green-600 bg-opacity-70 opacity-0 hover:opacity-100 flex items-center justify-center transition-opacity duration-300 h-[150px]">
+                  <span class="text-white font-bold text-lg">
+                    <Magnify />
+                    Ver más
+                  </span>
+                </div>
+                <h2 class="text-secondary px-1 text-center text-lg font-bold">
+                  {item.name}
+                </h2>
+              </div>
+            </>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .slider {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .slider .slidertrack {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: scroll 60s linear infinite;
+    -webkit-animation: scroll 40s linear infinite;
+    width: calc(200px * 14);
+  }
+
+  .slider .slide {
+    width: 200px;
+    height: min-content;
+  }
+
+  .slider .slide img {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @keyframes scroll {
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+
+    100% {
+      -webkit-transform: translateX(calc(-200px * 6));
+      transform: translateX(calc(-200px * 6));
+    }
+  }
+</style>
